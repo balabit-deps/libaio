@@ -1,0 +1,15 @@
+source="libaio"
+version=0.3.112-pe-1
+
+build() {
+  make
+}
+
+check() {
+  make partcheck
+}
+
+install() {
+  # no destdir option
+  make prefix="${dest_dir}/${prefix}" install
+}
